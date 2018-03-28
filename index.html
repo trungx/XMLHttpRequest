@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>demo test XMLHttpRequest </h1>
+    
+    <script>
+        var url = 'https://rawgit.com/tahongtrung/3a6237285ff554dadaf50ae72526beab/raw/3cf40ec6c02fc759db8c422cda86ddb96bf8a864/XMLHttpRequest.json'
+        //alert('xx')
+        var xhr = new XMLHttpRequest();
+        //var xhr = new JSONHttpRequest();
+        xhr.open('GET', url);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText);
+                //xhr.responseText
+                console.log(data);
+            }
+            else {
+                console.log(xhr.status);
+            }
+        };
+        xhr.send();
+        console.log('end!');
+    </script>
+</body>
+</html>
