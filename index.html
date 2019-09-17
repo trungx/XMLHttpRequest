@@ -10,7 +10,7 @@
     <h1>demo test XMLHttpRequest </h1>
     
     <script>
-        var url = 'https://gist.githubusercontent.com/trungx/3a6237285ff554dadaf50ae72526beab/raw/7961c46d404af50970b614cade0b2e2a2527a9c7/XMLHttpRequest.json'
+        /*var url = 'https://gist.githubusercontent.com/trungx/3a6237285ff554dadaf50ae72526beab/raw/7961c46d404af50970b614cade0b2e2a2527a9c7/XMLHttpRequest.json'
         //alert('xx')
         var xhr = new XMLHttpRequest();
         //var xhr = new JSONHttpRequest();
@@ -25,10 +25,29 @@
                 console.log(xhr.status);
             }
         };
+        //console.log(xhr);
         xhr.send();
+        xhr.onloadend = function(data) {
+            console.log(data);
+        }
 
-        console.log('end!');
-        
+        console.log('end!');*/
+         function callaquyen() {
+            return fetch('https://gist.githubusercontent.com/trungx/3a6237285ff554dadaf50ae72526beab/raw/7961c46d404af50970b614cade0b2e2a2527a9c7/XMLHttpRequest.json')
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(myJson) {
+            //console.log(JSON.stringify(myJson));
+            return myJson;
+          });
+        }
+       
+        (async () => {
+            let x = await callaquyen();
+            console.log(x);
+            console.log('aaa');
+        })();
     </script>
 </body>
 </html>
